@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Tranlation
+
+it is only provided to operation list and consumer list page title. Translation can be found in English, French and German.
+
+
+### Login
+
+Login as Admin 
+    email - admin@abc.com
+    password - 123
+Login as Operations 
+    email - operations@abc.com
+    password - 123
+Login as Consumer 
+    email - Consumer@abc.com
+    password - 123
+
