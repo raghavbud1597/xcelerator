@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import OperationsList from './../constants/OperationsList'
 import { useSelector} from 'react-redux';
 import Roles from './../constants/Role';
+import translate from './../i18n/Translations/translate'
 
 export default function OperationsListPage() {
     const [shouldView, setShouldView] = useState(false);
@@ -16,7 +17,7 @@ export default function OperationsListPage() {
         <div>
             {shouldView ? (
                 <>
-                    <h1>Operations List</h1>
+                    <h1>{translate("operations-list-title")}</h1>
                     <ul>
                         { OperationsList.map(item => (
                             <li key={item.id}>{item.name}</li>

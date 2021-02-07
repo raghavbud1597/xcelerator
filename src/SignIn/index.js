@@ -12,7 +12,9 @@ import {
     AdminPayload,
     ConsumerPayload,
     OperationPayload
-} from './../constants/UserPayload'
+} from './../constants/UserPayload';
+
+import translate from './../i18n/Translations/translate'
 
 export default function Signin(props) {
     const dispatch = useDispatch();
@@ -47,7 +49,9 @@ export default function Signin(props) {
                     <Col md={8} >
                         <Form>
                             <Form.Group controlId="signinEmail">
-                                <Form.Label>Email address</Form.Label>
+                                <Form.Label>
+                                    Email Address
+                                </Form.Label>
                                 <Form.Control 
                                     type="email" 
                                     placeholder="Enter email" 

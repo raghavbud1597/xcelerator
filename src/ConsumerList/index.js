@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import ConsumerList from './../constants/ConsumerList'
 import { useSelector} from 'react-redux';
 import Roles from './../constants/Role';
+import translate from './../i18n/Translations/translate'
 
 export default function ConsumerListPage() {
     const [shouldView, setShouldView] = useState(false);
@@ -16,7 +17,7 @@ export default function ConsumerListPage() {
         <div>
             {shouldView ? (
                 <>
-                    <h1>Consumer List</h1>
+                    <h1>{translate("consumer-list-title")}</h1>
                     <ul>
                         { ConsumerList.map(item => (
                             <li key={item.id}>{item.name}</li>

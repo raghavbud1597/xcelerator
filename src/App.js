@@ -1,3 +1,4 @@
+import React, {useState} from 'react'
 import './style/App.scss';
 import {
   BrowserRouter,
@@ -8,17 +9,23 @@ import Error from './Error';
 import ProtectedRoute from './protected.route';
 import Signin from './SignIn';
 import Dashboard from './Dashboard';
+import {I18nProvider, LOCALES} from './i18n';
 
 
 function App() {
+  const [lang, setLang] = useState(LOCALES.ENGLISH)
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Signin} />
-        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-        <Route path="*" component={Error} />
-      </Switch>
-    </BrowserRouter>
+    <I18nProvider locale={lang}>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Signin} />
+          <ProtectedRoute exact path="/dashboard">
+            <Dashboard setLang={setLang}/>
+          </ProtectedRoute>
+          <Route path="*" component={Error} />
+        </Switch>
+      </BrowserRouter>
+    </I18nProvider>
   );
 }
 

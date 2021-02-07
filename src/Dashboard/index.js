@@ -18,7 +18,7 @@ const LeftNavBar = styled.div`
     width: 70px;
 `
 
-export default function Dashboard() {
+export default function Dashboard({setLang}) {
     
     return (
         <div className="vh-100 vw-100">
@@ -27,7 +27,7 @@ export default function Dashboard() {
                     <LeftNav/>
                 </LeftNavBar>
                 <Col>
-                    <TopNav/>
+                    <TopNav setLang={setLang}/>
                     <DashboardSection>
                         <div className="bg-white h-100 p-5"> 
                             <ConsumerListPage/>
