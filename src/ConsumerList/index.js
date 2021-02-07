@@ -8,8 +8,8 @@ export default function ConsumerListPage() {
     const userDetail = useSelector(state => state.user);
 
     useEffect(() => {
-        if(userDetail.role) {
-            setShouldView(Roles[`${userDetail.role}`].includes("CONSUMERS_DETAILS"));
+        if(userDetail.user_detail.role) {
+            setShouldView(Roles[`${userDetail.user_detail.role}`].includes("CONSUMERS_DETAILS"));
         }
     }, [userDetail]);
     return (

@@ -8,8 +8,8 @@ export default function OperationsListPage() {
     const userDetail = useSelector(state => state.user);
 
     useEffect(() => {
-        if(userDetail.role) {
-            setShouldView(Roles[`${userDetail.role}`].includes("OPERATIONS_DETAILS"));
+        if(userDetail.user_detail.role) {
+            setShouldView(Roles[`${userDetail.user_detail.role}`].includes("OPERATIONS_DETAILS"));
         }
     }, [userDetail]);
     return (

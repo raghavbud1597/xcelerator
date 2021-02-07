@@ -20,16 +20,15 @@ const NavBar = styled(Nav)`
     padding: 20px;
 `
 
-export default function TopNav(props) {
+export default function TopNav() {
     const dispatch = useDispatch();
     const handleClick = () => {
         dispatch(logout());
-        props.history.push('./');
       };
     return (
         <NavBar className="justify-content-end align-items-center">
             <Nav.Item>
-                <Btn href="#" onClick={handleClick} className="ml-3">
+                <Btn href="./" onClick={handleClick} className="ml-3">
                     <img src={Logout} alt="Logout Icon" height="15" width="15" className="mr-2"/>
                     Log out
                 </Btn>

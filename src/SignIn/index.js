@@ -7,7 +7,12 @@ import {
 } from 'react-bootstrap';
 import Login from './../images/login.png';
 import { useDispatch } from 'react-redux';
-import {login} from './../actions'
+import {login, userDetails} from './../actions';
+import {
+    AdminPayload,
+    ConsumerPayload,
+    OperationPayload
+} from './../constants/UserPayload'
 
 export default function Signin(props) {
     const dispatch = useDispatch();
@@ -15,9 +20,21 @@ export default function Signin(props) {
     const [pass, setPass] = useState('');
     const [error, setError] = useState(false);
     const handleSubmit = () => {
-        dispatch(login());
-        props.history.push('./dashboard');
-        setError(true);
+        if(email === 'consumer@abc.com' && pass === '123') {
+            dispatch(login());
+            dispatch(userDetails(ConsumerPayload));
+            props.history.push('./dashboard');  
+        } else if (email === 'operations@abc.com' && pass === '123') {
+            dispatch(login());
+            dispatch(userDetails(OperationPayload));
+            props.history.push('./dashboard');
+        } else if (email === 'admin@abc.com' && pass === '123') {
+            dispatch(login());
+            dispatch(userDetails(AdminPayload));
+            props.history.push('./dashboard');
+        } else {
+            setError(true);
+        }
       };
 
     return (
