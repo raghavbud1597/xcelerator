@@ -27,7 +27,9 @@ export default function Dashboard() {
                 <Col>
                     <TopNav/>
                     <DashboardSection>
-
+                        <div className="bg-white h-100"> 
+                            
+                        </div>
                     </DashboardSection>
                 </Col>
             </Row>
