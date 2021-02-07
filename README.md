@@ -84,6 +84,6 @@ Login as Operations
     email - operations@abc.com
     password - 123
 Login as Consumer 
-    email - Consumer@abc.com
+    email - consumer@abc.com
     password - 123
 
