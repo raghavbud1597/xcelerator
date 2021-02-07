@@ -6,6 +6,8 @@ import {
 import LeftNav from '../NavBar/LeftNav';
 import TopNav from '../NavBar/TopNav';
 import styled from 'styled-components';
+import ConsumerListPage from './../ConsumerList'
+import OperationsListPage from './../OperationList'
 
 const DashboardSection = styled.div`
     background-color: #F3F3F4;
@@ -27,8 +29,9 @@ export default function Dashboard() {
                 <Col>
                     <TopNav/>
                     <DashboardSection>
-                        <div className="bg-white h-100"> 
-                            
+                        <div className="bg-white h-100 p-5"> 
+                            <ConsumerListPage/>
+                            <OperationsListPage/>
                         </div>
                     </DashboardSection>
                 </Col>
