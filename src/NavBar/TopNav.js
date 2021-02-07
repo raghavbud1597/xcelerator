@@ -6,6 +6,7 @@ import Logout from './../images/logout.png';
 import { useDispatch } from 'react-redux';
 import {logout} from '../actions'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom';
 
 const Btn = styled.a`
     color: #212529;
@@ -22,13 +23,16 @@ const NavBar = styled(Nav)`
 
 export default function TopNav() {
     const dispatch = useDispatch();
+    const history = useHistory();
+
     const handleClick = () => {
         dispatch(logout());
+        history.push("/");
       };
     return (
         <NavBar className="justify-content-end align-items-center">
             <Nav.Item>
-                <Btn href="./" onClick={handleClick} className="ml-3">
+                <Btn href="#" onClick={handleClick} className="ml-3">
                     <img src={Logout} alt="Logout Icon" height="15" width="15" className="mr-2"/>
                     Log out
                 </Btn>
